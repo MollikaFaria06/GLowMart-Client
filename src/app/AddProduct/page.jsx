@@ -40,7 +40,7 @@ export default function AddProduct() {
   };
 
   return (
-    <div className="px-4 py-10 bg-pink-100 min-h-screen">
+    <div className="px-4 py-10 bg-white min-h-screen">
       <div className="max-w-3xl mx-auto p-8 bg-white rounded-2xl shadow-xl">
         <h2 className="mb-6 text-3xl font-bold text-center text-pink-700">
           Add New Product
