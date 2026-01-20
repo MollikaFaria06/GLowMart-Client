@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useContext } from "react";
+import { useContext, Suspense } from "react";
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
 import { FaGoogle } from "react-icons/fa";
@@ -8,13 +8,23 @@ import { toast } from "react-toastify";
 import { AuthContext } from "@/context/AuthContext";
 
 export default function RegisterPage() {
+  return (
+    <Suspense fallback={<div className="mt-20 text-center">Loading...</div>}>
+      <RegisterContent />
+    </Suspense>
+  );
+}
+
+function RegisterContent() {
   const { signInUser, signInWithGoogle } = useContext(AuthContext);
   const router = useRouter();
   const searchParams = useSearchParams();
+
   const redirectTo = searchParams.get("from") || "/";
 
   const handleRegister = async (event) => {
     event.preventDefault();
+
     const displayName = event.target.displayName.value.trim();
     const photoURL = event.target.photoURL.value.trim();
     const email = event.target.email.value.trim();
@@ -34,7 +44,8 @@ export default function RegisterPage() {
     }
 
     try {
-      await signInUser(email, password); // Mock registration/login
+      // mock registration/login (same behavior as login page)
+      await signInUser(email, password);
       toast.success("Account created successfully!");
       router.push(redirectTo);
     } catch (error) {
@@ -62,7 +73,9 @@ export default function RegisterPage() {
 
         <form onSubmit={handleRegister} className="space-y-5">
           <div className="flex flex-col">
-            <label className="text-gray-700 font-semibold mb-1">Name</label>
+            <label className="text-gray-700 font-semibold mb-1">
+              Name
+            </label>
             <input
               type="text"
               name="displayName"
@@ -73,7 +86,9 @@ export default function RegisterPage() {
           </div>
 
           <div className="flex flex-col">
-            <label className="text-gray-700 font-semibold mb-1">Photo URL</label>
+            <label className="text-gray-700 font-semibold mb-1">
+              Photo URL
+            </label>
             <input
               type="text"
               name="photoURL"
@@ -83,7 +98,9 @@ export default function RegisterPage() {
           </div>
 
           <div className="flex flex-col">
-            <label className="text-gray-700 font-semibold mb-1">Email</label>
+            <label className="text-gray-700 font-semibold mb-1">
+              Email
+            </label>
             <input
               type="email"
               name="email"
@@ -94,7 +111,9 @@ export default function RegisterPage() {
           </div>
 
           <div className="flex flex-col">
-            <label className="text-gray-700 font-semibold mb-1">Password</label>
+            <label className="text-gray-700 font-semibold mb-1">
+              Password
+            </label>
             <input
               type="password"
               name="password"

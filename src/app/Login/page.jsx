@@ -1,6 +1,6 @@
 "use client";
 
-import { useContext } from "react";
+import { useContext, Suspense } from "react";
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
 import { FaGoogle } from "react-icons/fa";
@@ -8,12 +8,22 @@ import { toast } from "react-toastify";
 import { AuthContext } from "@/context/AuthContext";
 
 export default function LoginPage() {
+  return (
+    <Suspense fallback={<div className="mt-20 text-center">Loading...</div>}>
+      <LoginContent />
+    </Suspense>
+  );
+}
+
+function LoginContent() {
   const { signInUser, signInWithGoogle } = useContext(AuthContext);
   const router = useRouter();
   const searchParams = useSearchParams();
 
+  // redirect path
   const redirectTo = searchParams.get("from") || "/";
 
+  // Email/Password login
   const handleLogIn = async (event) => {
     event.preventDefault();
     const email = event.target.email.value;
@@ -28,6 +38,7 @@ export default function LoginPage() {
     }
   };
 
+  // Google login
   const handleGoogleSignIn = async () => {
     try {
       await signInWithGoogle();
@@ -43,12 +54,16 @@ export default function LoginPage() {
       <div className="w-full max-w-md p-8 bg-white shadow-2xl rounded-3xl border border-pink-200">
         <div className="text-center mb-6">
           <h1 className="text-4xl font-extrabold text-pink-500">GlowMart</h1>
-          <p className="text-gray-500 mt-1">Welcome back! Please login.</p>
+          <p className="text-gray-500 mt-1">
+            Welcome back! Please login.
+          </p>
         </div>
 
         <form onSubmit={handleLogIn} className="space-y-5">
           <div className="flex flex-col">
-            <label className="text-gray-700 font-semibold mb-1">Email</label>
+            <label className="text-gray-700 font-semibold mb-1">
+              Email
+            </label>
             <input
               type="email"
               name="email"
@@ -59,7 +74,9 @@ export default function LoginPage() {
           </div>
 
           <div className="flex flex-col">
-            <label className="text-gray-700 font-semibold mb-1">Password</label>
+            <label className="text-gray-700 font-semibold mb-1">
+              Password
+            </label>
             <input
               type="password"
               name="password"
