@@ -1,7 +1,7 @@
 import ProductCard from '@/app/ProductCard/page'
 
 export default async function CardSection() {
-  const res = await fetch('http://localhost:5000/latestProducts', {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/latestProducts`, {
     cache: 'no-store', // always fresh data
   });
   const data = await res.json();

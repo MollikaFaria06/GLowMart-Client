@@ -1,20 +1,32 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import { useParams, useRouter } from "next/navigation";
 import { toast } from "react-toastify";
 import { IoMdPricetags } from "react-icons/io";
+import { AuthContext } from "@/context/AuthContext";
 
 export default function ProductDetails() {
   const { id } = useParams();
   const router = useRouter();
+  const { user } = useContext(AuthContext); // Auth state
 
   const [product, setProduct] = useState(null);
   const [loadingProduct, setLoadingProduct] = useState(true);
 
+  // Redirect if not logged in
+  useEffect(() => {
+    if (!user) {
+      toast.warning("You must log in to view product details!");
+      router.push("/Login");
+    }
+  }, [user, router]);
+
   // Fetch product by ID
   useEffect(() => {
-    fetch(`http://localhost:5000/shop/${id}`)
+    if (!user) return null; // Only fetch if logged in
+
+    fetch(`${process.env.NEXT_PUBLIC_API_URL}/shop/${id}`)
       .then((res) => res.json())
       .then((data) => {
         setProduct(data);
@@ -25,7 +37,15 @@ export default function ProductDetails() {
         toast.error("Failed to load product details!");
         setLoadingProduct(false);
       });
-  }, [id]);
+  }, [id, user]);
+
+  if (!user) {
+    return (
+      <div className="mt-10 text-center text-red-500 font-semibold">
+        Redirecting to login...
+      </div>
+    );
+  }
 
   if (loadingProduct) {
     return (
@@ -47,7 +67,6 @@ export default function ProductDetails() {
     <div className="max-w-5xl p-6 mx-auto my-8">
       <div className="overflow-hidden bg-white border border-gray-200 shadow-2xl rounded-2xl">
         <div className="flex flex-col gap-8 p-6 md:flex-row">
-
           {/* Product Image */}
           <div className="w-full md:w-1/2">
             <img

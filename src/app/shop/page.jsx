@@ -11,7 +11,7 @@ export default function Shop() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("http://localhost:5000/shop") 
+    fetch(`${process.env.NEXT_PUBLIC_API_URL}/shop`) 
       .then((res) => res.json())
       .then((data) => {
         setProducts(data);

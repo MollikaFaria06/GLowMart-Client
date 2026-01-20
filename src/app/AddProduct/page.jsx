@@ -32,7 +32,7 @@ export default function AddProduct() {
     };
 
     try {
-      const res = await fetch("http://localhost:5000/shop", {
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/shop`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(newProduct),
