@@ -26,7 +26,7 @@ export default function ProductDetails() {
   useEffect(() => {
     if (!user) return null; // Only fetch if logged in
 
-    fetch(`${process.env.NEXT_PUBLIC_API_URL}/shop/${id}`)
+    fetch("https://g-low-mart-server.vercel.app/shop/${id}")
       .then((res) => res.json())
       .then((data) => {
         setProduct(data);
