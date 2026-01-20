@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import ProductCard from "../ProductCard/page";
+import ProductCard from "../ProductCard/page"; 
 
 export default function Shop() {
   const [products, setProducts] = useState([]);
@@ -11,7 +11,7 @@ export default function Shop() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("https://g-low-mart-server.vercel.app/shop") 
+    fetch("https://g-low-mart-server.vercel.app/shop")
       .then((res) => res.json())
       .then((data) => {
         setProducts(data);
@@ -92,14 +92,15 @@ export default function Shop() {
 
       {/* Product Grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-       {filteredProducts.length > 0 ? (
+        {filteredProducts.length > 0 ? (
           filteredProducts.map((product) => (
             <ProductCard key={product._id} product={product} />
           ))
         ) : (
-          <p className="text-center col-span-full">No products found.</p>
+          <p className="text-center col-span-full text-gray-500">
+            No products found.
+          </p>
         )}
-
       </div>
     </div>
   );

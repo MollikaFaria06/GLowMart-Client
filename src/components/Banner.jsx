@@ -2,11 +2,18 @@
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Autoplay } from "swiper/modules";
+import { useRouter } from "next/navigation";
 
 import "swiper/css";
 import "swiper/css/navigation";
 
 export default function Banner() {
+  const router = useRouter();
+
+  const goToShop = () => {
+    router.push("/shop"); // Navigate to your shop page
+  };
+
   return (
     <div className="relative w-full h-[500px] md:h-[600px]">
       <Swiper
@@ -42,12 +49,12 @@ export default function Banner() {
                 Discover high-quality skincare & makeup products for your daily
                 glow.
               </p>
-              <a
-                href="/items"
+              <button
+                onClick={goToShop}
                 className="bg-pink-500 text-white px-6 py-3 rounded-lg hover:bg-pink-600 transition"
               >
                 Shop Now
-              </a>
+              </button>
             </div>
           </div>
         </SwiperSlide>
@@ -71,12 +78,12 @@ export default function Banner() {
               <h3 className="text-3xl font-bold mb-4 text-gray-800">
                 Flat 40% OFF
               </h3>
-              <a
-                href="/items"
+              <button
+                onClick={goToShop}
                 className="bg-pink-500 text-white px-6 py-3 rounded-lg hover:bg-pink-600 transition"
               >
                 Explore Collection
-              </a>
+              </button>
             </div>
           </div>
         </SwiperSlide>
@@ -103,12 +110,12 @@ export default function Banner() {
                 Save up to 30% Today
               </p>
 
-              <a
-                href="/items"
+              <button
+                onClick={goToShop}
                 className="bg-pink-500 text-white px-8 py-3 rounded-full text-lg hover:bg-pink-600 transition"
               >
                 Shop Beauty
-              </a>
+              </button>
             </div>
           </div>
         </SwiperSlide>

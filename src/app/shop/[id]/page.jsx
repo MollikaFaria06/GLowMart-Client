@@ -9,7 +9,7 @@ import { AuthContext } from "@/context/AuthContext";
 export default function ProductDetails() {
   const { id } = useParams();
   const router = useRouter();
-  const { user } = useContext(AuthContext); // Auth state
+  const { user } = useContext(AuthContext);
 
   const [product, setProduct] = useState(null);
   const [loadingProduct, setLoadingProduct] = useState(true);
@@ -19,24 +19,29 @@ export default function ProductDetails() {
     if (!user) {
       toast.warning("You must log in to view product details!");
       router.push("/Login");
+      return; 
     }
   }, [user, router]);
 
-  // Fetch product by ID
+  // Fetch product by ID (only if user is logged in)
   useEffect(() => {
-    if (!user) return null; // Only fetch if logged in
+    if (!user) return; 
 
-    fetch(`https://g-low-mart-server.vercel.app/shop/${id}`)
-      .then((res) => res.json())
-      .then((data) => {
+    const fetchProduct = async () => {
+      try {
+        const res = await fetch(`https://g-low-mart-server.vercel.app/shop/${id}`);
+        if (!res.ok) throw new Error("Failed to fetch");
+        const data = await res.json();
         setProduct(data);
-        setLoadingProduct(false);
-      })
-      .catch((err) => {
+      } catch (err) {
         console.error(err);
         toast.error("Failed to load product details!");
+      } finally {
         setLoadingProduct(false);
-      });
+      }
+    };
+
+    fetchProduct();
   }, [id, user]);
 
   if (!user) {
@@ -67,7 +72,6 @@ export default function ProductDetails() {
     <div className="max-w-5xl p-6 mx-auto my-8">
       <div className="overflow-hidden bg-white border border-gray-200 shadow-2xl rounded-2xl">
         <div className="flex flex-col gap-8 p-6 md:flex-row">
-          {/* Product Image */}
           <div className="w-full md:w-1/2">
             <img
               src={product.image}
@@ -75,39 +79,29 @@ export default function ProductDetails() {
               className="object-cover w-full rounded-xl"
             />
           </div>
-
-          {/* Product Details */}
           <div className="w-full space-y-4 md:w-1/2">
             <h1 className="text-3xl font-bold text-pink-700">{product.name}</h1>
             <div className="my-3 border-t border-gray-300"></div>
-
             <h2 className="mb-2 text-xl font-semibold">Description:</h2>
             <p className="text-gray-600">{product.description || "No description available."}</p>
-
             <div className="my-3 border-t border-gray-300"></div>
-
             <p>
               <span className="font-semibold">Category:</span>
               <span className="text-pink-500"> {product.category}</span>
             </p>
-
             <p>
               <span className="font-semibold">Unit:</span>
               <span className="text-orange-400">{product.unit}</span>
             </p>
-
             <p>
               <span className="font-semibold">Stock:</span> {product.stock}
             </p>
-
             <div className="grid grid-cols-2 gap-4 mt-4 font-bold text-gray-700">
               <p className="flex items-center gap-1">
                 <IoMdPricetags /> Price: <span className="text-[#4895ef]">${product.price}</span>
               </p>
               <p>⭐⭐⭐⭐⭐ {product.rating}</p>
             </div>
-
-            {/* Back Button */}
             <div className="mt-6">
               <button
                 onClick={() => router.push("/shop")}
