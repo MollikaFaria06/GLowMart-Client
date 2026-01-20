@@ -11,7 +11,7 @@ export default function Shop() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch(`${process.env.NEXT_PUBLIC_API_URL}/shop`) 
+    fetch("https://g-low-mart-server.vercel.app/shop") 
       .then((res) => res.json())
       .then((data) => {
         setProducts(data);
@@ -94,7 +94,7 @@ export default function Shop() {
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
         {filteredProducts.length > 0 ? (
           filteredProducts.map((product) => (
-            <ProductCard key={product._id} product={product} />
+  <ProductCard key={product._id.toString()} product={product} />
           ))
         ) : (
           <p className="text-center col-span-full text-gray-500">
