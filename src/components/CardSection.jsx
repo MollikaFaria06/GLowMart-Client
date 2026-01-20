@@ -1,7 +1,7 @@
 import ProductCard from '@/app/ProductCard/page'
 
 export default async function CardSection() {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/shop/latestProducts`, {
+  const res = await fetch('https://g-low-mart-server.vercel.app/shop/latestProducts', {
     cache: 'no-store', // always fresh data
   });
   const data = await res.json();
@@ -13,9 +13,9 @@ export default async function CardSection() {
       </h2>
 
       <div className="grid max-w-7xl mx-auto grid-cols-1 gap-6 p-4 md:grid-cols-3 lg:grid-cols-4">
-        {data.map(product => (
-          <ProductCard key={product._id} product={product} />
-        ))}
+        {data.map((product) => (
+             <ProductCard key={product._id} product={product} />
+         ))}
       </div>
     </div>
   );

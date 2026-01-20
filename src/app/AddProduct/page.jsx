@@ -32,7 +32,7 @@ export default function AddProduct() {
     };
 
     try {
-      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/shop`, {
+      const res = await fetch("https://g-low-mart-server.vercel.app/shop", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(newProduct),
