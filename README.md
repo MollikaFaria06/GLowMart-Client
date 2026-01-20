@@ -8,7 +8,7 @@ This project includes product management, secure user login (mock), responsive m
 #### 🚀 Features
 
 - 🔐 User Authentication (Mock Login with Email & Password)
-- 📦 Product Management (Add, View, Product Details)
+- 📦 Product Management (Add)
 - 📱 Fully Responsive UI – Desktop + Mobile
 - 🔥 Real-time Database using MongoDB
 - 🖼️ Swiper Slider on Home Page
@@ -65,7 +65,8 @@ npm run dev
 
 ### 🚀 Live Demo & Repositories
 
-## 🔗 Live Demo: https://glowmart-client.vercel.app/
+## 🔗 Live Demo:
+ https://glowmart-client.vercel.app/
 
 ## 📦 Client Repository:
 https://github.com/MollikaFaria06/GLowMart-Client.git
