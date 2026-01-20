@@ -29,7 +29,7 @@ export default function Navbar() {
         <div className="flex items-center gap-3">
           <Link href="/" className="flex items-center">
             <img
-              src="https://i.ibb.co.com/9HRykrcw/ma.avif"
+              src="https://i.ibb.co/9HRykrcw/ma.avif"
               alt="GlowMart Logo"
               className="h-14 w-auto"
             />
@@ -161,12 +161,6 @@ export default function Navbar() {
                   className="flex items-center gap-2 py-2 px-3 bg-pink-50 text-pink-600 rounded-md hover:bg-pink-100"
                 >
                   <FaPlus /> Add Product
-                </Link>
-                <Link
-                  href="/ManageProducts"
-                  className="flex items-center gap-2 py-2 px-3 bg-pink-50 text-pink-600 rounded-md hover:bg-pink-100"
-                >
-                  <FaBox /> Manage Products
                 </Link>
               </div>
             </>

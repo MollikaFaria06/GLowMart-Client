@@ -8,9 +8,7 @@ export default async function CardSection() {
 
   return (
     <div className="py-10">
-      <h2 className="text-3xl font-bold text-center mb-8 
-                     bg-gradient-to-r from-pink-500 via-pink-400 to-pink-300 
-                     bg-clip-text text-transparent">
+      <h2 className="text-3xl font-bold text-center mb-8  bg-gradient-to-r from-pink-500 via-pink-400 to-pink-300 bg-clip-text text-transparent">
         All Products
       </h2>
 

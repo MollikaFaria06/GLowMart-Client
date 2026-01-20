@@ -11,7 +11,7 @@ export default function Footer() {
       <div
         className="absolute inset-0 bg-cover bg-center opacity-50"
         style={{
-          backgroundImage: "url('https://i.ibb.co.com/m5YXZsRF/fol.webp')",
+          backgroundImage: "url('https://i.ibb.co/m5YXZsRF/fol.webp')",
         }}
       ></div>
 

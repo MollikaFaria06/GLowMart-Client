@@ -7,16 +7,14 @@ export default function ExtraSection() {
     <section
       className="max-w-7xl mx-auto bg-cover bg-center bg-no-repeat py-20 md:py-28"
       style={{
-        backgroundImage: "url('https://i.ibb.co.com/dsZG7DRy/bag.webp')",
+        backgroundImage: "url('https://i.ibb.co/dsZG7DRy/bag.webp')",
       }}
     >
       <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 items-center gap-10">
 
         {/* LEFT SIDE CONTENT */}
         <div>
-          <h2 className="text-4xl md:text-5xl font-extrabold 
-                         bg-gradient-to-r from-pink-500 via-pink-400 to-pink-300 
-                         bg-clip-text text-transparent leading-snug">
+          <h2 className="text-4xl md:text-5xl font-extrabold bg-gradient-to-r from-pink-500 via-pink-400 to-pink-300 bg-clip-text text-transparent leading-snug">
             Special Offers on All GlowMart Products
           </h2>
 
@@ -34,7 +32,7 @@ export default function ExtraSection() {
         {/* RIGHT SIDE IMAGE */}
         <div className="flex justify-center items-end">
           <Image
-            src="https://i.ibb.co.com/zhLG3WCp/by.png"
+            src="https://i.ibb.co/zhLG3WCp/by.png"
             width={500}
             height={500}
             alt="GlowMart Cosmetics"

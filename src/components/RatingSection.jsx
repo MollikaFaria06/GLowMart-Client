@@ -76,8 +76,7 @@ const RatingSection = () => {
   return (
     <div className="max-w-7xl mx-auto py-12 md:py-16 px-4 md:px-6 text-center">
       {/* Section Heading */}
-      <h2 className="bg-gradient-to-r from-pink-500 via-pink-400 to-pink-300 
-                     bg-clip-text text-transparent text-3xl md:text-4xl font-bold mb-2">
+      <h2 className="bg-gradient-to-r from-pink-500 via-pink-400 to-pink-300 bg-clip-text text-transparent text-3xl md:text-4xl font-bold mb-2">
         What Our Customers Say
       </h2>
       <p className="text-gray-500 mb-8 md:mb-10 text-sm sm:text-base">

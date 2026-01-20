@@ -21,9 +21,7 @@ const categories = [
 export default function Categories() {
   return (
     <div className="max-w-7xl mx-auto px-4 py-10">
-      <h2 className="bg-gradient-to-r from-pink-500 via-pink-400 to-pink-300 bg-clip-text text-transparent text-4xl font-bold text-center mb-8">
-        Popular Categories
-      </h2>
+      <h2 className="bg-gradient-to-r from-pink-500 via-pink-400 to-pink-300 bg-clip-text text-transparent text-4xl font-bold text-center mb-8">Popular Categories</h2>
 
       <Swiper
         modules={[Autoplay, Navigation]}

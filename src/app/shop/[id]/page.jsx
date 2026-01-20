@@ -4,12 +4,10 @@ import { useEffect, useState } from "react";
 import { useParams, useRouter } from "next/navigation";
 import { toast } from "react-toastify";
 import { IoMdPricetags } from "react-icons/io";
-import { useAuth } from "@/context/AuthProvider";
 
 export default function ProductDetails() {
   const { id } = useParams();
   const router = useRouter();
-  const { user } = useAuth(); // Auth state (optional)
 
   const [product, setProduct] = useState(null);
   const [loadingProduct, setLoadingProduct] = useState(true);

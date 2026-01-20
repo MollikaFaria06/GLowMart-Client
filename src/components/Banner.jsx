@@ -28,7 +28,7 @@ export default function Banner() {
             className="w-full h-full bg-cover bg-center flex items-center justify-start px-6 md:px-40"
             style={{
               backgroundImage:
-                "url('https://i.ibb.co.com/Y48HDW5X/cos9.jpg')",
+                "url('https://i.ibb.co/Y48HDW5X/cos9.jpg')",
             }}
           >
             <div className="bg-white px-10 py-16 rounded shadow-lg max-w-lg text-center">
@@ -58,7 +58,7 @@ export default function Banner() {
             className="w-full h-full bg-cover bg-center flex items-center justify-center px-6 md:px-40"
             style={{
               backgroundImage:
-                "url('https://i.ibb.co.com/WNmypBz9/cos10.jpg')",
+                "url('https://i.ibb.co/WNmypBz9/cos10.jpg')",
             }}
           >
             <div className="bg-white px-16 py-16 text-center border-4 border-pink-400 shadow-xl">
@@ -87,7 +87,7 @@ export default function Banner() {
             className="w-full h-full bg-cover bg-center flex items-center justify-end px-6 md:px-40"
             style={{
               backgroundImage:
-                "url('https://i.ibb.co.com/QFp85gyj/cos8.webp')",
+                "url('https://i.ibb.co/QFp85gyj/cos8.webp')",
             }}
           >
             <div className="bg-white px-16 py-14 max-w-xl shadow-lg text-center">

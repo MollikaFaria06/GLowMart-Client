@@ -10,31 +10,31 @@ const topProducts = [
     id: 1,
     name: "Glow Serum",
     price: "$25",
-    img: "https://i.ibb.co.com/XrZ2g17x/serum.jpg",
+    img: "https://i.ibb.co/XrZ2g17x/serum.jpg",
   },
   {
     id: 2,
     name: "Matte Lipstick",
     price: "$15",
-    img: "https://i.ibb.co.com/7xL9RJ74/matte.jpg",
+    img: "https://i.ibb.co/7xL9RJ74/matte.jpg",
   },
   {
     id: 3,
     name: "Hydrating Cream",
     price: "$30",
-    img: "https://i.ibb.co.com/m5dRbsL6/Hydrating-Cream.webp",
+    img: "https://i.ibb.co/m5dRbsL6/Hydrating-Cream.webp",
   },
   {
     id: 4,
     name: "Face Primer",
     price: "$20",
-    img: "https://i.ibb.co.com/twPzZZTX/pime.jpg",
+    img: "https://i.ibb.co/twPzZZTX/pime.jpg",
   },
   {
     id: 5,
     name: "Highlighter Kit",
     price: "$18",
-    img: "https://i.ibb.co.com/bj8XKp3Y/kitt.jpg",
+    img: "https://i.ibb.co/bj8XKp3Y/kitt.jpg",
   },
 ];
 

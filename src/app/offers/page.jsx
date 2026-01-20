@@ -7,21 +7,21 @@ const offersData = [
     id: 1,
     title: "Skincare Essentials Sale",
     discount: "20% OFF",
-    image: "https://i.ibb.co.com/G4YjwyPC/sale.avif",
+    image: "https://i.ibb.co/G4YjwyPC/sale.avif",
     category: "Skincare",
   },
   {
     id: 2,
     title: "Makeup Must-Haves",
     discount: "Flat 15% OFF",
-    image: "https://i.ibb.co.com/Hp1nqw0V/up.webp",
+    image: "https://i.ibb.co/Hp1nqw0V/up.webp",
     category: "Makeup",
   },
   {
     id: 3,
     title: "Haircare Combo Deal",
     discount: "Buy 1 Get 1",
-    image: "https://i.ibb.co.com/1J6PDKQH/hair.webp",
+    image: "https://i.ibb.co/1J6PDKQH/hair.webp",
     category: "Haircare",
   },
 ];
@@ -39,7 +39,7 @@ export default function OffersPage() {
       {/* HERO BANNER */}
       <section className="relative overflow-hidden rounded-2xl shadow-lg">
         <img
-          src="https://i.ibb.co.com/4gX8DrtB/bt.avif"
+          src="https://i.ibb.co/4gX8DrtB/bt.avif"
           alt="GlowMart Offers"
           className="w-full h-90 object-cover"
         />

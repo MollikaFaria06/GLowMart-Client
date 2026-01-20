@@ -29,9 +29,7 @@ export default function StatsSection() {
   return (
     <div className="max-w-7xl mx-auto py-14 px-4">
       {/* Section Heading */}
-      <h2 className="text-4xl font-bold text-center mb-12 
-                     bg-gradient-to-r from-pink-500 via-pink-400 to-pink-300 
-                     bg-clip-text text-transparent">
+      <h2 className="text-4xl font-bold text-center mb-12 bg-gradient-to-r from-pink-500 via-pink-400 to-pink-300 bg-clip-text text-transparent">
         Our Statistics
       </h2>
 

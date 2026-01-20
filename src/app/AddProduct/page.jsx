@@ -1,11 +1,20 @@
 "use client";
 
 import { useContext } from "react";
-import { AuthContext } from "@/context/AuthContext";
+import { useRouter } from "next/navigation";
 import { toast } from "react-toastify";
+import { AuthContext } from "@/context/AuthContext";
+import { useEffect} from "react";
 
 export default function AddProduct() {
   const { user } = useContext(AuthContext);
+  const router = useRouter();
+
+  useEffect(() => {
+  if (!user) {
+    router.push("/Login"); // redirect to login if not logged in
+  }
+}, [user]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -23,7 +32,7 @@ export default function AddProduct() {
     };
 
     try {
-      const res = await fetch("https://grocery-project-server.vercel.app/shop", {
+      const res = await fetch("http://localhost:5000/shop", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(newProduct),
@@ -31,8 +40,10 @@ export default function AddProduct() {
 
       const data = await res.json();
       toast.success("Product added successfully!");
-      console.log(data);
       e.target.reset(); // Form clear
+
+      // Redirect to shop page
+      router.push("/shop");
     } catch (error) {
       toast.error("Something went wrong!");
       console.log(error);
@@ -47,7 +58,6 @@ export default function AddProduct() {
         </h2>
 
         <form onSubmit={handleSubmit} className="space-y-5">
-
           {/* Product Name */}
           <div className="space-y-1">
             <label className="font-semibold text-gray-700">Product Name</label>
@@ -67,7 +77,7 @@ export default function AddProduct() {
               name="category"
               type="text"
               required
-              placeholder=" Foundation / Skincare / Perfume" 
+              placeholder="Foundation / Skincare / Perfume" 
               className="w-full px-4 py-2 border rounded-xl outline-none focus:ring-2 focus:ring-pink-400 transition"
             />
           </div>
@@ -135,7 +145,7 @@ export default function AddProduct() {
               name="image"
               type="url"
               required
-              placeholder="https://example.com/image.png"
+              placeholder="https://i.ibb.co/YTdnQ6zF/ww.jpg"
               className="w-full px-4 py-2 border rounded-xl outline-none focus:ring-2 focus:ring-pink-400 transition"
             />
           </div>

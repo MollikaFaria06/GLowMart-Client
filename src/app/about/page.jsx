@@ -8,21 +8,21 @@ const blogPosts = [
     title: "Skincare Routine for Glowing Skin",
     date: "Nov 18, 2025",
     link: "https://www.healthline.com/health/beauty-skin-care",
-    image: "https://i.ibb.co.com/zgDXrVg/rot.jpg",
+    image: "https://i.ibb.co/zgDXrVg/rot.jpg",
   },
   {
     id: 2,
     title: "Top Makeup Trends You Should Try",
     date: "Oct 30, 2025",
     link: "https://www.allure.com/makeup",
-    image: "https://i.ibb.co.com/RpydJ7Hq/mak.webp",
+    image: "https://i.ibb.co/RpydJ7Hq/mak.webp",
   },
   {
     id: 3,
     title: "How to Choose the Right Beauty Products",
     date: "Sep 20, 2025",
     link: "https://www.cosmopolitan.com/style-beauty/",
-    image: "https://i.ibb.co.com/GftNwMnP/tt.jpg",
+    image: "https://i.ibb.co/GftNwMnP/tt.jpg",
   },
 ];
 
@@ -55,9 +55,7 @@ export default function About() {
 
       {/* HERO SECTION */}
       <section className="text-center">
-        <h1 className="text-5xl md:text-6xl font-bold mb-6 
-        bg-gradient-to-r from-pink-500 via-rose-400 to-orange-400 
-        bg-clip-text text-transparent">
+        <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-pink-500 via-rose-400 to-orange-400 bg-clip-text text-transparent">
           About GloM – GlowMart
         </h1>
 
@@ -68,7 +66,7 @@ export default function About() {
         </p>
 
         <img
-          src="https://i.ibb.co.com/wrbNvMtR/lov.jpg"
+          src="https://i.ibb.co/wrbNvMtR/lov.jpg"
           alt="GlowMart Beauty"
           className="w-full max-w-3xl mx-auto mt-10 rounded-xl shadow-lg"
         />
